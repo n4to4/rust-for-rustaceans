@@ -17,3 +17,13 @@ fn run2() {
     x = 43;
     //assert_eq!(*y, 43);
 }
+
+fn run3() {
+    let x1 = 42;
+    let y1 = Box::new(84);
+    {
+        let z = (x1, y1);
+    }
+    let x2 = x1;
+    //let y2 = y1;
+}
