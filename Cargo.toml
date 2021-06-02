@@ -1,0 +1,11 @@
+[package]
+name = "rust-for-rustaceans"
+version = "0.1.0"
+authors = []
+edition = "2018"
+
+[workspace]
+
+members = [
+    "chapter02",
+]
