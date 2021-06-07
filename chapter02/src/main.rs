@@ -44,3 +44,14 @@ fn replace_with_84(s: &mut Box<i32>) {
     std::mem::swap(s, &mut r);
     assert_ne!(*r, 84);
 }
+
+fn lifetimes_holes() {
+    let mut x = Box::new(42);
+    let mut z = &x;
+    for i in 0..100 {
+        println!("{}", z);
+        x = Box::new(i);
+        z = &x;
+    }
+    println!("{}", z);
+}
