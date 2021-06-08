@@ -5,5 +5,9 @@ name = "chapter02"
 version = "0.1.0"
 
 [[package]]
+name = "chapter03"
+version = "0.1.0"
+
+[[package]]
 name = "rust-for-rustaceans"
 version = "0.1.0"

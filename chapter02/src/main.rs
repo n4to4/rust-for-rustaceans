@@ -1,5 +1,5 @@
 fn main() {
-    call_replace_with_84();
+    variance1();
 }
 
 fn run1() {
@@ -54,4 +54,22 @@ fn lifetimes_holes() {
         z = &x;
     }
     println!("{}", z);
+}
+
+fn variance1() {
+    struct MutStr<'a, 'b> {
+        s: &'a mut &'b str,
+    }
+    let mut s = "hello";
+    *MutStr { s: &mut s }.s = "world";
+    println!("{}", s);
+}
+
+fn variance2() {
+    struct MutStr<'a> {
+        s: &'a mut &'a str,
+    }
+    let mut s = "hello";
+    *MutStr { s: &mut s }.s = "world";
+    println!("{}", s);
 }

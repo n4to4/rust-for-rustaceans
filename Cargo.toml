@@ -8,4 +8,5 @@ edition = "2018"
 
 members = [
     "chapter02",
+    "chapter03",
 ]
