@@ -34,4 +34,25 @@ impl<Stage> Rocket<Stage> {
     }
 }
 
+//---
+
+pub trait CanUseCannotImplement: sealed::Sealed {}
+trait TraitBounds {}
+mod sealed {
+    use super::*;
+    pub trait Sealed {}
+    impl<T> Sealed for T where T: TraitBounds {}
+}
+impl<T> CanUseCannotImplement for T where T: TraitBounds {}
+
+//---
+
+fn is_normal<T: Sized + Send + Sync + Unpin>() {}
+
+#[test]
+fn normal_types() {
+    struct MyType;
+    is_normal::<MyType>();
+}
+
 fn main() {}
